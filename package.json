@@ -1,0 +1,113 @@
+{
+  "name": "@gawryco/reactquiz-engine",
+  "version": "0.1.0",
+  "description": "ReactQuiz Engine - A comprehensive React quiz component library with TypeScript support, multiple question types, and advanced features",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:docs": "vite build --config vite.docs.config.ts",
+    "dev": "vite",
+    "dev:docs": "vite --config vite.docs.config.ts",
+    "dev:lib": "vite build --watch",
+    "dev:full": "concurrently \"pnpm dev:lib\" \"pnpm dev:docs\" --names \"library,docs\" --prefix-colors \"blue,green\"",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 50",
+    "lint:fix": "eslint src --ext ts,tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "type-check": "tsc --noEmit",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "prepare": "husky",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "quiz",
+    "component",
+    "interactive",
+    "typescript",
+    "tailwind",
+    "forms",
+    "survey",
+    "assessment",
+    "ui"
+  ],
+  "author": "Gawry&Co <contact@gawry.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gawryco/reactquiz-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gawryco/reactquiz-engine/issues"
+  },
+  "homepage": "https://gawryco.github.io/reactquiz-engine/",
+  "peerDependencies": {
+    "lucide-react": ">=0.200.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "concurrently": "^9.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "husky": "^9.1.7",
+    "jsdom": "^24.1.0",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "size-limit": "^11.2.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "dependencies": {
+    "html-to-image": "^1.11.13",
+    "i18next": "^25.5.2",
+    "i18next-browser-languagedetector": "^8.2.0",
+    "lucide-react": "^0.544.0",
+    "react-i18next": "^15.7.3",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx,json,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.esm.js",
+      "limit": "50 KB"
+    },
+    {
+      "path": "dist/index.cjs.js", 
+      "limit": "50 KB"
+    }
+  ]
+}
