@@ -1,6 +1,6 @@
 {
   "name": "@gawryco/reactquiz-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ReactQuiz Engine - A comprehensive React quiz component library with TypeScript support, multiple question types, and advanced features",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -106,7 +106,7 @@
       "limit": "50 KB"
     },
     {
-      "path": "dist/index.cjs.js", 
+      "path": "dist/index.cjs.js",
       "limit": "50 KB"
     }
   ]
